@@ -1,0 +1,18 @@
+aplicatie preluat actiuni ( nume actiune,pret tranzactie, cantitate/volum, data tranzactiei )
+
+aplicatie consola de introdus lista de actiuni intr-un array / generics
+
+1. introdus manual 
+2. citit din fisier .csv - File.ReadAllLines
+3. citit de pe net  - nu faci decit daca stii / invat
+
+GOOG,100,1,2011/11/12
+MSFT,1,1,2011/11/12
+MSFT,1,1,2011/11/12
+
+calculat per actiune pret mediu ,cantitate/volum mediu
+aplicatia te intreaba la inceput cum sa faci - introduci manual sau citesti din fisier
+Daca citesti din fisier,iti da fisierul
+
+
+Ce clase creezi?
