@@ -107,7 +107,7 @@ namespace H2___aplicatie_actiuni
 
         public static List<Financial_Instrument> CitireFisier()
         {
-            string CurrFile = @"C:\Users\cip\source\repos\Andrei Ignat\H2 - aplicatie actiuni\SourceFile.txt";
+            string CurrFile = @"SourceFile.txt";
             string[] lines = File.ReadAllLines(CurrFile);
             List<Financial_Instrument> Assets = new List<Financial_Instrument>();
             int RecordsNumber = lines.Count();

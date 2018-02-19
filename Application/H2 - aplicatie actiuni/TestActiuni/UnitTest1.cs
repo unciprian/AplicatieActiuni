@@ -163,7 +163,7 @@ namespace TestActiuni
         {
             #region arrange
             //Exista vreo modalitate prin care pot sa preiau calea CurrFile din Program.cs, nu sa o harcodez aici?
-            string CurrFile = @"C:\Users\cip\source\repos\Andrei Ignat\H2 - aplicatie actiuni\SourceFile.txt";
+            string CurrFile = @"SourceFile.txt";
             #endregion
             #region act
             //trebuie neaparat sa am ceva in sectiunea act?
@@ -178,7 +178,7 @@ namespace TestActiuni
         public void TestFileNotEmpty()
         {
             #region arrange
-            string CurrFile = @"C:\Users\cip\source\repos\Andrei Ignat\H2 - aplicatie actiuni\SourceFile.txt";
+            string CurrFile = @"SourceFile.txt";
             #endregion
             #region act
             string[] lines = File.ReadAllLines(CurrFile);
