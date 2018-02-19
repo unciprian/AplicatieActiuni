@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MathNet.Numerics;
+using MathNet.Numerics.Statistics;
 
 namespace BusinessLogicActiuni
 {
@@ -68,7 +69,7 @@ namespace BusinessLogicActiuni
 
         public decimal? StandardDev(string symbol)
         {
-
+            
 
             int k = List.Where(it => it.Symbol == symbol).Count();
             if (k == 0)
@@ -76,8 +77,12 @@ namespace BusinessLogicActiuni
 
             //decimal SumOfSquares = List
             //    .Where(it => it.Symbol == symbol)
-            //    .Sum(it => Math.Pow(it.Price - AverageVolume, 2));  //de ce nu merge asa din moment ce eu am deja calculat Average Price?
+            //    .Sum(it => (decimal)Math.Pow((double)(it.Price - AverageVolume("") ?? 0), (double)2));  //de ce nu merge asa din moment ce eu am deja calculat Average Price?
 
+            IEnumerable<double> AllValues = List.Where(it => it.Symbol == symbol).Select(it => (double)it.Price).ToArray();
+            var q = AllValues.StandardDeviation();
+
+           // MathNet.Numerics.Statistics.Statistics.StandardDeviation(AllValues)
 
             decimal Avg = List.Where(it => it.Symbol == symbol).Average(it => it.Price);
             double SumOfSquares = List
