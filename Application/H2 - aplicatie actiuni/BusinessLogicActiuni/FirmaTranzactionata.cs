@@ -35,7 +35,7 @@
     // incearca Httpclient C#
     // google for download file C#
     // parsat fisierul  separat cu n, nu \r\n = use split
-    // pus in clase si intr-o lista
+    // pus in clase si intr-o listaw
 
 
     //NEXT TIME :ef
