@@ -137,7 +137,7 @@ namespace TestActiuni
             #region arrange
             List<Financial_Instrument> fi = new List<Financial_Instrument>();
             Financial_Instrument fin = new Financial_Instrument();
-            fin.Symbol = "SNP";
+            fin.firma.Symbol = "SNP";
             fi.Add(fin);
             Financial_Instrument fin1 = new Financial_Instrument();
             fin1.Symbol = "SNP";
@@ -150,6 +150,19 @@ namespace TestActiuni
             #region assert
             Assert.AreEqual(1, simboluri.Length);
             #endregion
+        }
+
+        [TestMethod]
+        public void TestVirtual()
+        {
+            FirmaTranzactionata ft = new FirmaTranzactionata();
+            Assert.AreEqual(PropertyType.Listed, ft.GetMyProperty());
+            Assert.AreEqual(2, ft.x());
+
+            Firma ft1 = new FirmaTranzactionata();
+            Assert.AreEqual(PropertyType.Listed, ft1.GetMyProperty());
+            Assert.AreEqual(1, ft1.x());
+
         }
 
     }
@@ -198,12 +211,18 @@ namespace TestActiuni
         {
             #region arrange
             List<Financial_Instrument> fi = new List<Financial_Instrument>();
-            Financial_Instrument fin = new Financial_Instrument();
-            fin.Symbol = "SNP";
+            FirmaTranzactionata ft = new FirmaTranzactionata();
+            ft.Symbol = "SNP";
+            Financial_Instrument fin = new Financial_Instrument(ft);
+            
             fin.Price = 5;
             fi.Add(fin);
-            Financial_Instrument fin1 = new Financial_Instrument();
-            fin1.Symbol = "SNP";
+
+            FirmaTranzactionata ft1 = new FirmaTranzactionata();
+            ft1.Symbol = "SNP";
+
+            Financial_Instrument fin1 = new Financial_Instrument(ft1);
+            
             fin1.Price =9;
             fi.Add(fin1);
 

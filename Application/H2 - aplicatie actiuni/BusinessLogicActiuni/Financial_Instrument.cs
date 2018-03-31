@@ -9,7 +9,27 @@ namespace BusinessLogicActiuni
 {
     public class Financial_Instrument
     {
-        public string Symbol { get; set; }
+        public Financial_Instrument(FirmaTranzactionata firma=null)
+        {
+            if (firma == null)
+            {
+                firma = new FirmaTranzactionata();
+            }
+
+            this.firma = firma;
+        }
+        public string Symbol
+        {
+            get
+            {
+                return firma.Symbol;
+            }
+            set
+            {
+                firma.Symbol = value;
+            }
+        }
+        public FirmaTranzactionata firma;
         public decimal Price { get; set; }
         public int Volume { get; set; }
         public DateTime TransactionDate { get; set; }

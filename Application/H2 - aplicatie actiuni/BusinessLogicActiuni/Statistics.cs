@@ -23,11 +23,11 @@ namespace BusinessLogicActiuni
         {
 
 
-            int k = List.Where(it => it.Symbol == symbol).Count();
+            int k = List.Where(it => it.firma.Symbol == symbol).Count();
             if (k == 0)
                 return null;
             decimal Sum = List
-                            .Where(it => it.Symbol == symbol)
+                            .Where(it => it.firma.Symbol == symbol)
                             .Select(it => it.Price)
                             .Sum();
             decimal AvgPrice = Sum/k;
@@ -56,11 +56,11 @@ namespace BusinessLogicActiuni
         {
 
 
-            int k = List.Where(it => it.Symbol == symbol).Count();
+            int k = List.Where(it => it.firma.Symbol == symbol).Count();
             if (k == 0)
                 return null;
             decimal Sum = List
-                            .Where(it => it.Symbol == symbol)
+                            .Where(it => it.firma.Symbol == symbol)
                             .Select(it => it.Volume)
                             .Sum();
             decimal AvgVolume = Sum / k;
@@ -71,7 +71,7 @@ namespace BusinessLogicActiuni
         {
             
 
-            int k = List.Where(it => it.Symbol == symbol).Count();
+            int k = List.Where(it => it.firma.Symbol == symbol).Count();
             if (k == 0)
                 return null;
 
@@ -79,14 +79,14 @@ namespace BusinessLogicActiuni
             //    .Where(it => it.Symbol == symbol)
             //    .Sum(it => (decimal)Math.Pow((double)(it.Price - AverageVolume("") ?? 0), (double)2));  //de ce nu merge asa din moment ce eu am deja calculat Average Price?
 
-            IEnumerable<double> AllValues = List.Where(it => it.Symbol == symbol).Select(it => (double)it.Price).ToArray();
+            IEnumerable<double> AllValues = List.Where(it => it.firma.Symbol == symbol).Select(it => (double)it.Price).ToArray();
             var q = AllValues.StandardDeviation();
 
            // MathNet.Numerics.Statistics.Statistics.StandardDeviation(AllValues)
 
-            decimal Avg = List.Where(it => it.Symbol == symbol).Average(it => it.Price);
+            decimal Avg = List.Where(it => it.firma.Symbol == symbol).Average(it => it.Price);
             double SumOfSquares = List
-                .Where(it => it.Symbol == symbol)
+                .Where(it => it.firma.Symbol == symbol)
                 .Sum(it => Math.Pow((double)(it.Price - Avg), 2));
 
             double StDev = Math.Sqrt(SumOfSquares / (k - 1));
@@ -113,7 +113,7 @@ namespace BusinessLogicActiuni
             //    result.Add(item.Symbol);
             //}
 
-            var result = List.Select(it => it.Symbol).Distinct().ToArray();
+            var result = List.Select(it => it.firma.Symbol).Distinct().ToArray();
             return result;
         }
     }

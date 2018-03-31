@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Financial_Instrument.cs" />
+    <Compile Include="Firma SP500.cs" />
+    <Compile Include="FirmaTranzactionata.cs" />
+    <Compile Include="Firma_DowJones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Statistics.cs" />
   </ItemGroup>

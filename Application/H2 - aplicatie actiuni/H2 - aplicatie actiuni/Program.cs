@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MathNet.Numerics;//Cum pot sa folosesc o functie din acest pachet? de ex: SampleStandardDeviation
+using MathNet.Numerics;
 
 namespace H2___aplicatie_actiuni
 {
@@ -71,8 +71,16 @@ namespace H2___aplicatie_actiuni
             ReadSymbolAndShowStatistics(Assets);
 
             Console.WriteLine("End program");
-            Console.ReadLine();
             
+
+            List < Firma > Firme = new List<Firma>();
+            FirmaTranzactionata Google = new FirmaTranzactionata();
+            FirmaNetranzactionata Hidroelectrica = new FirmaNetranzactionata();
+            Firme.Add(Google);
+            Firme.Add(Hidroelectrica);
+            Console.WriteLine(Hidroelectrica.GetMyProperty());
+            Console.ReadLine();
+
         }
 
         public static List<Financial_Instrument> IntroducereManuala()
